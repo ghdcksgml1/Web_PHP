@@ -3,7 +3,7 @@
 🧑🏻‍💻 이 레퍼지토리는 **'웹코딩 시작하기'** 라는 책을 보며 PHP를 학습한 내용들을 기록한 레퍼지토리 입니다.
 <br/><br/>
 
-![3FE03ADA-61BC-497A-8469-8550E138E420_1_105_c](https://user-images.githubusercontent.com/79779676/126358082-672171b3-dc4e-4102-b60e-3bbee2692c04.jpeg)
+<img width="400" alt="스크린샷 2021-07-30 오후 8 17 41" src="https://user-images.githubusercontent.com/79779676/127645471-89cea5e5-e17a-48f4-b60c-38b741b6ca14.png">
 
 
 <br/><br/>
@@ -50,16 +50,101 @@
 
 
 * 10-1. 텍스트 함수
+
+
+    trim(), strtoupper(), strtolower(), strlen(),
+    
+    str_replace(), substr(), explode()
+
+
 * 10-2. 시간 함수
+
+    time(), date(), mktime()
+    
 ##
 > 11. 함수 만들기
+
+```php
+<?php
+  function 함수명($parameter){
+    // 명령문 작성
+    return $para
+  }
+?>
+```
 
 ##
 > 12. POST와 GET
 ##
 
+### GET방식
+    
+    파일이름) get.php
+    
+```php
+<?php
+  echo "GET type : ".$_GET['type']."<br/>";
+  echo "GET mobile : ".$_GET['mobile']."<br/>"
+?>
+```
+
+    // url=http://localhost/get.php?type=first&mobile=ok
+
+    // 결과
+    
+    // GET type : first
+    
+    // GET mobile : ok
+    
+### POST방식
+
+    파일이름) form.php
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>POST</title>
+  </head>
+<body>
+  <h1>로그인</h1>
+  <form name="data method="post" action="post.php"/>
+  <label for="email">email</label>
+  <input type="email" name="email_post" id="email" placeholder="ID"/>
+  <label for="password">password</label>
+  <input type="password" name="password_post" id="password" placeholder="PW"/>
+  <input type="submit" value="제출"/>
+  </form>
+</body>
+</html>
+```
+
+<br/><br/>
+
+    파일이름) post.php
+```php
+<?php
+    echo "email : ".$_POST['email_post']."<br/>"; // input태그의 name을 '[ ]'에 입력
+    echo "password : ".$_POST['password_post']."<br/>"; // input태그의 name을 '[ ]'에 입력
+?>
+```
+
 > 13. 기능의 사물화 (객체)
 ##
+
+```php
+<?php
+  class people{
+    function __construct(){
+      // 생성자
+    }
+    
+    function __destruct(){
+      // 이 사물이 요청받은 것을 모두 처리한 후 실행되는 코드
+    }
+  }
+?>
+```
 
 > 14. 코드의 재활용
 
