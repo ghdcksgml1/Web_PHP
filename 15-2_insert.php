@@ -1,29 +1,26 @@
 <?php
-$dn_con = new mysqli("localhost", "root", "hks13579", "myfirstDB");
-
-if (mysqli_connect_error()) {
-    echo "tq";
-} else {
-    echo "DB 연결 실패";
-}
+    include_once '15-1_connetDB.php';
 
     $userId = "miu0709";
     $name = "김미우";
     $userPw = "aldn";
     $phone = "010-1234-5678";
     $email = "kmu07@everdevel.com";
+    $birthDay = "0925";
     $gender = "w";
 
-    $sql = "INSERT INTO myMember(userId, name, password, phone, email, gender, regTime) VALUES";
-    $sql .= "('{$userId}','{$name}','{$userPw}','{$phone}','{$email}','{$gender}',NOW())";
-    echo "1";
-    $result = $dn_con->query($sql);
-echo "2";
+    $sql = "INSERT INTO myMember(userId, name, password, phone, email, birthday, gender, regTime) VALUES";
+    $sql .= "('{$userId}','{$name}','{$userPw}','{$phone}','{$email}','{$birthDay}','{$gender}',NOW())";
+    
+    $result = mysqli_query($db_con,$sql);
 
-    echo $sql;
     if($result){
-        echo "데이터 입력 완료";
+        echo "insert 완료";
     }else{
-        echo "데이터 입력 실패";
+        echo "insert 실패";
     }
+
+    mysqli_close($db_con);
+
+
 ?>

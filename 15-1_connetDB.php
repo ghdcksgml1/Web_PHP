@@ -1,9 +1,10 @@
 <?php
-    $dn_con = new mysqli("localhost","root","hks13579","myMember");
-
-    if($dn_con){
-        echo "DB 연결 성공";
-    }else{
-        echo "DB 연결 실패";
+    $db_con = mysqli_connect("localhost:3306", "root", "hks13579","myfirstDB");
+    if ($db_con){
+    echo "DB 연결 성공<p>";
+    } else {
+    echo "DB 연결 실패<p>";
     }
+    
+    
 ?>
